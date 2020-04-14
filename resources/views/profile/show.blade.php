@@ -8,7 +8,7 @@
                         style="display: inline-block; margin: auto; position: sticky; width: 100%; position: relative"
                         alt="">
 
-                    <img src="{{$user->getpravatar()}}"
+                    <img src="{{$user->image}}"
                          class="absolute transform -translate-y-1/2 rounded-full "
                          alt=""
                          style="left: 45%"
@@ -16,7 +16,7 @@
                     >
                 </div>
 
-                <div class="flex justify-between p-2">
+                <div class="flex justify-between p-2  ">
                     <div>
                         <h1 class="font-bold text-lg">{{$user->name}}</h1>
                         <h2 class="text-gray-400">{{$user->nickname}}</h2>
@@ -45,7 +45,8 @@
                 </div>
             </header>
             <div>
-                @include('_timeline', ['tweets' => $user->tweets])
+                @include('_timeline',
+                ['tweets' => $tweets])
             </div>
 @endsection
 

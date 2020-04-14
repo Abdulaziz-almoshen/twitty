@@ -1,6 +1,12 @@
 <div class="pt-5">
     {{-- here is the feed--}}
-    @foreach($tweets as $tweet)
+    @forelse($tweets as $tweet)
         @include('_tweet')
-    @endforeach
+
+        @empty
+        <p class="text-gray-600"> go ahead and say somethign your timeline is empty </p>
+    @endforelse
+    {{$tweets->links()}}
+
 </div>
+

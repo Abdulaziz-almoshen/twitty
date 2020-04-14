@@ -28,6 +28,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/profile/{user}/edit' , 'ProfileController@edit')
         ->name('edit-profile')->middleware('can:edit,user');
 
-    Route::post('/profile/{user:name}/update' , 'ProfileController@update')->name('update-profile');
+    Route::patch('/profile/{user:name}/update' , 'ProfileController@update')->name('update-profile')->middleware('can:edit,user');
     Route::post('/profile/follow/{user:name}' , 'ProfileController@store')->name('follow');
+    Route::get('/explore' , 'ExploreController@index');
+
 });

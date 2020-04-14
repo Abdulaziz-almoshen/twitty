@@ -2,11 +2,12 @@
     <div class="flex p-3 ">
         <div class="flex-shrink-0 mr-3">
             <a href="{{route('profile',$tweet->user->name)}}"><img
-                src="{{$tweet->user->getpravatar()}}"
+                src="{{$tweet->user->image}}"
                 alt=""
-                class="rounded-full pr-2"
-                width="50"
-                height="50"
+                class="rounded-full pr-2  h-15"
+                width="60"
+                height="60"
+
             ></a>
         </div>
         <div>
