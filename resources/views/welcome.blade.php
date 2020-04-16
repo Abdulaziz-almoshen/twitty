@@ -69,7 +69,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Twitty
+                    Almo
                 </div>
 
                 <div class="links">

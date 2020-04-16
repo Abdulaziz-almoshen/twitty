@@ -23,7 +23,7 @@
 <div id="app">
     <section class="px-8 pt-4">
         <header class="mx-auto">
-            <h1>TWITTY</h1>
+            <h1>Almo</h1>
         </header>
     </section>
 

@@ -1,9 +1,6 @@
 @extends('components.app')
 @section('content')
-    <form method="POST" action="{{ route('logout') }}" enctype="multipart/form-data">
-        @csrf
-        <button type="submit">Logout</button>
-    </form>
+
     <form method="post" action="{{route('update-profile', $user)}}" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
@@ -93,12 +90,13 @@
             @error('info')
             <p>{{$message}}</p>
             @enderror
-            <div class="flex items-center justify-between">
+            <div class="flex items-center">
                 <button
                     class="bg-blue hover:bg-blue-dark text-black font-bold py-2 px-4 rounded-lg border border-gray-200"
                     type="submit">
                     Save
                 </button>
+                <a href="{{route('profile', $user)}}" class="ml-6 underline"> cancel</a>
             </div>
 
         </div>
