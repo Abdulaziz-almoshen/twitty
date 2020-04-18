@@ -32,4 +32,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/profile/follow/{user:name}' , 'ProfileController@store')->name('follow');
     Route::get('/explore' , 'ExploreController@index');
 
+
+    Route::get('/liked/{user}' , 'LikesController@index')->name('liked');
+    Route::post('/like/{tweet}' , 'LikesController@like')->name('likeTweet');
+    Route::post('/dislike/{tweet}' , 'LikesController@dislike')->name('dislikeTweet');
+
+
+
 });

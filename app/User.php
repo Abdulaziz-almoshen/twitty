@@ -6,10 +6,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
+use Qirolab\Laravel\Reactions\Traits\Reacts;
+use Qirolab\Laravel\Reactions\Contracts\ReactsInterface;
 
-class User extends Authenticatable
+class User extends Authenticatable  implements ReactsInterface
 {
-    use Notifiable , followable;
+    use  Notifiable ,followable,Reacts;
+
 
     /**
      * The attributes that are mass assignable.
@@ -67,6 +70,16 @@ class User extends Authenticatable
     {
         return 'name';
     }
+
+    public function like ($tweet){
+
+        $this->toggleReactionOn($tweet, 'like');
+}
+
+    public function dislike ($tweet){
+
+        $this->toggleReactionOn($tweet, 'dislike');
+}
 
 
 }
