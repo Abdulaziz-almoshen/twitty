@@ -105,6 +105,7 @@
       <path value="$PROJECT_DIR$/vendor/nao-pon/flysystem-google-drive" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem-cached-adapter" />
       <path value="$PROJECT_DIR$/vendor/qirolab/laravel-reactions" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />

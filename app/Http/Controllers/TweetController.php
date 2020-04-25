@@ -13,6 +13,7 @@ class TweetController extends Controller
         return view('tweets.index', compact('tweets'));
     }
     public function store(){
+        dd(\request()->all());
         $tweet = request()->validate([
             'body' => 'required|max:140'
         ]);

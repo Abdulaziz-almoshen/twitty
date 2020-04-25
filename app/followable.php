@@ -16,10 +16,16 @@ trait followable
     {
         return $this->follows()->detach($user);
     }
-
+        //how ,any people he/she follows
     public function follows()
     {
         return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
+    }
+
+    // how many people folling him/her
+    public function isfollows()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'following_user_id','user_id' );
     }
 
     public function following($user)

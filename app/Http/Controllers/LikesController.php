@@ -12,9 +12,8 @@ class LikesController extends Controller
 
     public function index(User $user)
     {
-        $tweet = Tweet::whereReactedBy($user)->get();
-        dd($tweet);
-        return view('like.idex', compact('tweet'));
+        $tweets = Tweet::whereReactedBy($user)->get();
+        return view('like.index', compact('tweets'));
     }
 
     public function like(Tweet $tweet) {

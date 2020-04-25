@@ -1,7 +1,7 @@
 @extends('components.app')
 @section('content')
 
-    <form method="post" action="{{route('update-profile', $user)}}" enctype="multipart/form-data">
+    <form method="post" action="{{route('update-profile', $user)}}" enctype="multipart/form-data" id="upload_image_form" >
         @csrf
         @method('PATCH')
         <div class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 flex flex-col">
@@ -9,6 +9,7 @@
                 <img
                     src="{{$user->image}}"
                     alt=""
+                    id="preview_img"
                     style="left: 40%"
                     class="absolute transform -translate-y-6 h-auto rounded-full pr-2 "
                     width="100"
@@ -102,3 +103,4 @@
         </div>
     </form>
 @endsection
+
